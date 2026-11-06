@@ -61,6 +61,11 @@ lockdetect --csv C:\some\file.txt > locks.csv
 - Exit code is `0` on success, `1` if any path could not be queried, and `2`
   for a usage error.
 
+## AI Disclosure
+
+The source code in this repository was generated with AI assistance and
+reviewed/edited by the author (Mantis36558).
+
 ## License
 
-[MIT](LICENSE)
+[BSD-2-Clause](LICENSE)

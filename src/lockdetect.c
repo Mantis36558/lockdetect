@@ -7,7 +7,10 @@
  * Build:  cmake -S . -B build -G "MinGW Makefiles" && cmake --build build
  * Run:    lockdetect [options] <path> [path ...]
  *
- * License: MIT
+ * License: BSD-2-Clause
+ *
+ * AI disclosure: this source file was generated with AI assistance and
+ * reviewed by the author (Mantis36558).
  */
 
 #define WIN32_LEAN_AND_MEAN
