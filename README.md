@@ -61,6 +61,24 @@ lockdetect --csv C:\some\file.txt > locks.csv
 - Exit code is `0` on success, `1` if any path could not be queried, and `2`
   for a usage error.
 
+## Download & verify
+
+Prebuilt binaries are attached to each [GitHub Release](../../releases). The
+`SHA512SUMS.txt` file next to the executable contains its SHA-512 checksum.
+
+Verify with Git Bash / MSYS2:
+
+```bash
+sha512sum -c SHA512SUMS.txt
+```
+
+Or with PowerShell:
+
+```powershell
+(Get-FileHash .\lockdetect.exe -Algorithm SHA512).Hash.ToLower()
+# compare the output with the hash line in SHA512SUMS.txt
+```
+
 ## AI Disclosure
 
 The source code in this repository was generated with AI assistance and

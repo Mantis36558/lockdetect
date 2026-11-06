@@ -32,8 +32,17 @@ jobs:
         shell: msys2 {0}
         run: cmake --build build
 
+      - name: Generate SHA-512 checksum
+        shell: pwsh
+        run: |
+          $hash = (Get-FileHash -Algorithm SHA512 -Path 'build\lockdetect.exe').Hash.ToLower()
+          "$hash  lockdetect.exe" | Set-Content -Path 'build\SHA512SUMS.txt' -Encoding ascii
+          Get-Content 'build\SHA512SUMS.txt'
+
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          files: build/lockdetect.exe
+          files: |
+            build/lockdetect.exe
+            build/SHA512SUMS.txt
           generate_release_notes: true
